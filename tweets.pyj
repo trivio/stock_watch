@@ -1,0 +1,9 @@
+bac_tweets = rule('http://search.twitter.com/search.json?q=$BAC', 'bac_tweets')
+
+@bac_tweets.map
+def map(doc, params):
+  print doc
+
+@bac_tweets.reduce
+def reduce(iter, params):
+  return iter
