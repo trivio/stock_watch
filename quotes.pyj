@@ -11,7 +11,7 @@ def read_csv(stream, size, url, params):
 
 @bac_quotes.map
 def map(record, params):
-  from datetime import datatime
+  from datetime import datetime
   yield  str(datetime.utcnow()), record
 
 @bac_quotes.reduce
