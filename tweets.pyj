@@ -4,7 +4,7 @@ bac_tweets = rule('http://search.twitter.com/search.json?q=$BAC', 'bac_tweets')
 def map(doc, params):
   import json
   for tweet in  json.loads(doc)['results']:
-    yield tweet['created_at'], tweet['text']
+    yield str(tweet['created_at']), tweet['text']
 
 @bac_tweets.reduce
 def reduce(iter, params):
