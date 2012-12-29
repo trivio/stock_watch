@@ -1,0 +1,5 @@
+bac_quotes = rule("http://download.finance.yahoo.com/d/quotes.csv?s=BAC&f=nsl1op", "bac_quotes")
+
+@quotes.map
+def map(record, params):
+  yield  'BAC', record
