@@ -1,4 +1,4 @@
-bac_quotes = rule("http://download.finance.yahoo.com/d/quotes.csv?s=BAC&f=nspodhghl1", "bac_quotes")
+bac_quotes = rule("http://download.finance.yahoo.com/d/quotes.csv?s=BAC&f=nspohgl1", "bac_quotes")
 
 
 @bac_quotes.map_reader
