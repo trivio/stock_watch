@@ -1,8 +1,18 @@
-bac_quotes = rule("http://download.finance.yahoo.com/d/quotes.csv?s=BAC&f=nsl1op", "bac_quotes")
+bac_quotes = rule("http://download.finance.yahoo.com/d/quotes.csv?s=BAC&f=nsp0odhghl1", "bac_quotes")
+
+
+@bac_quotes.map_reader
+def read_csv(stream, size, url, params):
+  from csv import DictReader
+  return DictReader(
+    stream,
+    fieldnames = ('company', 'symbol', 'previous', 'open', 'high', 'low', 'close')
+  )
 
 @bac_quotes.map
 def map(record, params):
-  yield  'BAC', record
+  from datetime import datatime
+  yield  str(datetime.utcnow()), record
 
 @bac_quotes.reduce
 def reduce(iter, params):
