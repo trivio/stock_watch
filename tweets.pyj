@@ -1,6 +1,7 @@
 bac_tweets = rule('http://search.twitter.com/search.json?q=$BAC', 'bac_tweets')
-bac_tweets.interval = MINUTELY
-bac_tweets.freq = 15
+bac_tweets.freq = MINUTELY
+bac_tweets.interval = 15 
+
 
 
 @bac_tweets.map
