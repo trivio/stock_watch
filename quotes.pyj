@@ -1,4 +1,6 @@
 bac_quotes = rule("http://download.finance.yahoo.com/d/quotes.csv?s=BAC&f=nspohgl1", "bac_quotes")
+bac_quotes.freq = MINUTELY
+bac_quotes.interval = 15 
 
 
 @bac_quotes.map_reader
